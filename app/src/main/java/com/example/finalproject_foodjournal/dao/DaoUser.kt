@@ -1,11 +1,8 @@
 package com.example.finalproject_foodjournal.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Update
+import androidx.lifecycle.LiveData
+import androidx.room.*
 import com.example.finalproject_foodjournal.model.User
-
 
 @Dao
 interface DaoUser {
@@ -17,4 +14,10 @@ interface DaoUser {
 
     @Delete
     suspend fun deleteUser(user: User)
+
+    @Query("SELECT * FROM user")
+    fun loadAllUsers(): LiveData<List<User>>
+
+    @Query("SELECT * FROM user WHERE user_id LIKE :userID")
+    fun loadUser(userID: Int): LiveData<List<User>>
 }
