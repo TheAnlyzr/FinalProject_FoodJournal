@@ -18,6 +18,6 @@ interface DaoFoodLog {
     @Query("SELECT * FROM foodlog")
     fun loadAllLog(): LiveData<List<FoodLog>>
 
-    @Query("SELECT * FROM user WHERE user_id LIKE :logID")
+    @Query("SELECT * FROM foodlog WHERE log_id LIKE :logID")
     fun loadLog(logID: Int): LiveData<List<FoodLog>>
 }
