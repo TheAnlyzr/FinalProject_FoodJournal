@@ -9,6 +9,9 @@ class FoodViewModelFactory(private val repo: RepoFoodLog): ViewModelProvider.Fac
         if(modelClass.isAssignableFrom(HomeViewModel::class.java)){
             return HomeViewModel(repo) as T
         }
+        if(modelClass.isAssignableFrom(ReportViewModel::class.java)){
+            return ReportViewModel(repo) as T
+        }
 
         throw  IllegalArgumentException("Unknown View Model Class")
     }
