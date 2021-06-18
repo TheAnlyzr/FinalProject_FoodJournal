@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             setOf(R.id.homeFragment),
             drawer_layout
         )
-//        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
