@@ -58,7 +58,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecyclerView(){
-        // Ngebuat recycle view adapternya
         binding.homeRecyclerview.layoutManager = LinearLayoutManager(activity)
         // TODO: display food log
     }
